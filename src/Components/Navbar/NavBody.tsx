@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { AiFillCaretUp } from "react-icons/ai";
 import { MainLi } from "./MobileNav";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 /////types
 type obj = { li: string };
@@ -118,7 +118,7 @@ const NavBody = (props: Props) => {
             exit="exit"
           >
             {props.content.map((item, i) => {
-              let url = `/${heading}/${item.li.replaceAll(" ", "-")}`;
+              // let url = `/${heading}/${item.li.replaceAll(" ", "-")}`;
               return (
                 //for routing
                 //  <Link to={url}>

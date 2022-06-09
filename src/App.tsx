@@ -1,7 +1,6 @@
-import React, { useState } from "react";
 import "./App.css";
 import MobileNav from "./Components/Navbar/MobileNav";
-import { AnimatePresence } from "framer-motion";
+
 
 function App() {
   return (
