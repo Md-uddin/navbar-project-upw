@@ -5,6 +5,7 @@ import { AiFillCaretUp } from "react-icons/ai";
 import { MainLi } from "./MobileNav";
 import { Link } from "react-router-dom";
 
+/////types
 type obj = { li: string };
 type Props = {
   heading: string;

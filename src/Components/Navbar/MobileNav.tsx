@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
@@ -57,6 +57,7 @@ const MobileNav = () => {
     BtnStyles: BtnStyles1,
   });
 
+  /////styles
   const NavButtonContainer = styled.div`
     position: absolute;
     top: 20px;
@@ -122,6 +123,7 @@ const MobileNav = () => {
     background: black;
   `;
 
+  ////////animations
   const BackgroundVariant = {
     visible: {
       y: "0px",
