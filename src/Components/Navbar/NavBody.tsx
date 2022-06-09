@@ -1,8 +1,8 @@
 import { useState } from "react";
-import styled from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { AiFillCaretUp } from "react-icons/ai";
-import { MainLi } from "./MobileNav";
+import { DropContainer, InnerLi, MainLi } from "./styles";
+import { BoxVariant, liVariant } from "./animations";
 // import { Link } from "react-router-dom";
 
 /////types
@@ -15,73 +15,8 @@ type Props = {
 
 const NavBody = (props: Props) => {
   const [showContent, setShowContent] = useState(false);
+  //for link
   // let heading = props.heading.replaceAll(" ", "-");
-
-  ////styles
-  const InnerLi = styled.li`
-    list-style: none;
-    font-size: 1rem;
-    margin: 0.5rem 0;
-    &:hover,
-    &:focus {
-      color: rgba(95, 116, 212);
-    }
-  `;
-  const DropContainer = styled(motion.div)`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    // padding-left:1rem;
-  `;
-
-  ///Animations
-  const liVariant = {
-    visible: {
-      opacity: 1,
-      height: 30,
-      transition: {
-        duration: 0.4,
-        type: "spring",
-        damping: 18,
-        striffness: 178,
-      },
-    },
-    hidden: {
-      marginTop: 30,
-      opacity: 0,
-      height: 0,
-    },
-    exit: {
-      opacity: 0,
-      height: 0,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
-  const BoxVariant = {
-    visible: {
-      opacity: 1,
-      y: "0px",
-      transition: {
-        duration: 0.4,
-        type: "spring",
-        damping: 18,
-        striffness: 178,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      y: "-20px",
-    },
-    exit: {
-      opacity: 0.2,
-      height: 0,
-      transition: {
-        duration: 0.4,
-      },
-    },
-  };
 
   return (
     <>

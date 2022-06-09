@@ -1,75 +1,23 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 // import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import NavBody from "./NavBody";
+import {
+  BtnStyles1,
+  BtnStyles2,
+  Container,
+  MainLi,
+  NavButtonContainer,
+} from "./styles";
+import { BackgroundVariant, liVariant } from "./animations";
 
-export const MainLi = styled(motion.li)`
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin: 0.5rem 0;
-  color: white;
-  list-style: none;
-  text-transform: capitalize;
-  max-width: 80%;
-  height: max-content;
-  display: flex;
-  flex-direction: column;
-  transition: 0.5s;
-  cursor: pointer;
-  text-transform: capitalize;
-  div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    .icon {
-      margin-left: 0.5rem;
-      font-size: 1rem;
-      transition: 0.6s;
-    }
-  }
-  span {
-    width: 0%;
-    height: 2px !important;
-    background: rgba(95, 116, 212);
-    border-radius: 20px;
-    transition: 0.4s;
-  }
-  &:hover,
-  &:focus {
-    color: rgba(95, 116, 212);
-    span {
-      width: 100%;
-    }
-  }
-`;
 const MobileNav = () => {
-  let BtnStyles1 = {
-    after: "transform: translate(-70%,30%) ; width:20px;",
-    before: " transform: translate(-50%,-200%); width:30px;",
-  };
-  let BtnStyles2 = {
-    after: "transform: translate(-50%,-50%) rotate(-45deg);",
-    before: " transform: translate(-50%,-50%) rotate(45deg);",
-  };
   const [menu, setmenu] = useState({
     show: false,
     BtnStyles: BtnStyles1,
   });
 
-  /////styles
-  const NavButtonContainer = styled.div`
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    // background:grey;
-    // opacity:.1;
-    display: grid;
-    place-items: center;
-    z-index: 2;
-  `;
   const NavButton = styled.div`
     &:before {
       position: absolute;
@@ -107,74 +55,6 @@ const MobileNav = () => {
     transition: 0.8s;
     background-color: rgba(74, 91, 175);
   `;
-  const Container = styled(motion.div)`
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    overflow-y: auto;
-    background-image: linear-gradient(to top right, #1f1f1e, #0e0e0e);
-    color: white;
-    padding: 3rem;
-    padding-left: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: black;
-  `;
-
-  ////////animations
-  const BackgroundVariant = {
-    visible: {
-      y: "0px",
-      opacity: 1,
-      transition: {
-        duration: 0.4,
-        type: "spring",
-        damping: 18,
-        striffness: 178,
-      },
-    },
-    hidden: {
-      y: "-100vh",
-      opacity: 0,
-    },
-    exit: {
-      y: "100vh",
-      // opacity: 0,
-      transition: {
-        duration: 8,
-        type: "spring",
-        damping: 25,
-        striffness: 178,
-        delay: 0.3,
-      },
-    },
-  };
-  const liVariant = {
-    visible: {
-      opacity: 1,
-      height: 30,
-      transition: {
-        duration: 0.4,
-        type: "spring",
-        damping: 18,
-        striffness: 178,
-      },
-    },
-    hidden: {
-      marginTop: 30,
-      opacity: 0,
-      height: 0,
-    },
-    exit: {
-      opacity: 0,
-      height: 0,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
 
   return (
     <>
