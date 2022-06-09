@@ -15,7 +15,7 @@ type Props = {
 
 const NavBody = (props: Props) => {
   const [showContent, setShowContent] = useState(false);
-  let heading = props.heading.replaceAll(" ", "-");
+  // let heading = props.heading.replaceAll(" ", "-");
 
   ////styles
   const InnerLi = styled.li`
