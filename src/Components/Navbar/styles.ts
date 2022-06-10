@@ -16,6 +16,30 @@ export const Navbar = styled.div`
     margin-left: 0.2rem;
   }
 `;
+export const SocialContainer = styled.div`
+  width: 100%;
+  height: 50px;
+  // background: black;
+  margin-top: 72px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  // justify-content:flex-start;
+  position: absolute;
+  border-bottom: 1px solid #ffe9e9;
+  overflow: hidden;
+  img {
+    width: 50px;
+    margin-right: 0.6rem;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+      opacity: 0.6;
+      transform: scale(0.9);
+    }
+  }
+`;
 
 export const MainLi = styled(motion.li)`
   font-size: 1.4rem;

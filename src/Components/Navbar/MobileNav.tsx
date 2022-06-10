@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 // import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
@@ -10,8 +10,10 @@ import {
   MainLi,
   Navbar,
   NavButtonContainer,
+  SocialContainer,
 } from "./styles";
 import { BackgroundVariant, liVariant } from "./animations";
+// import { Link } from "react-router-dom";
 
 const MobileNav = () => {
   const [menu, setmenu] = useState({
@@ -55,24 +57,45 @@ const MobileNav = () => {
     position: relative;
     transition: 0.8s;
     // background-color: rgba(74, 91, 175);
-    background:white;
+    background: white;
+    box-shadow: 2px 2px 10px 2px #9a0000;
   `;
-
   return (
     <>
       <Navbar>
-        <img src="/images/GCNLogo.svg" alt="logo"/>
-      <NavButtonContainer>
-        <NavButton
-          onClick={() => {
-            setmenu({
-              show: !menu.show,
-              BtnStyles: menu.show === true ? BtnStyles1 : BtnStyles2,
-            });
-          }}
-        ></NavButton>
-      </NavButtonContainer>
+        {/* <Link to="/"> */}
+
+        <img src="/images/GCNLogo.svg" alt="logo" />
+        {/* </Link> */}
+        <NavButtonContainer>
+          <NavButton
+            onClick={() => {
+              setmenu({
+                show: !menu.show,
+                BtnStyles: menu.show === true ? BtnStyles1 : BtnStyles2,
+              });
+            }}
+          ></NavButton>
+        </NavButtonContainer>
       </Navbar>
+      <SocialContainer>
+        {/* <Link to="/somewhere"> */}
+
+        <img src="/images/IconCrc_facebook.png" alt="facebook-icon" />
+        {/* </Link> */}
+        {/* <Link to="/somewhere"> */}
+
+        <img src="/images/IconCrc_instagram.png" alt="facebook-icon" />
+        {/* </Link> */}
+        {/* <Link to="/somewhere"> */}
+
+        <img src="/images/IconCrc_twitter.png" alt="facebook-icon" />
+        {/* </Link> */}
+        {/* <Link to="/somewhere"> */}
+
+        <img src="/images/youTubeLogo.png" alt="facebook-icon" />
+        {/* </Link> */}
+      </SocialContainer>
       <AnimatePresence exitBeforeEnter={true}>
         {menu.show && (
           <Container
