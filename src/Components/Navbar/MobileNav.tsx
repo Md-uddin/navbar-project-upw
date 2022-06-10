@@ -8,6 +8,7 @@ import {
   BtnStyles2,
   Container,
   MainLi,
+  Navbar,
   NavButtonContainer,
 } from "./styles";
 import { BackgroundVariant, liVariant } from "./animations";
@@ -28,14 +29,14 @@ const MobileNav = () => {
       // left: 0.75rem;
       transition: 0.3s;
       content: "";
-      background: white;
+      background: black;
       border-radius: 50px;
       transition: 5s;
       ${menu.BtnStyles.before}
     }
     &:after {
       width: 40px;
-      background: white;
+      background: black;
       height: 0.2rem;
       content: "";
       position: absolute;
@@ -48,16 +49,19 @@ const MobileNav = () => {
     }
     width: 50px;
     height: 50px;
-    background: white;
+    background: black;
     border-radius: 50%;
     margin: auto;
     position: relative;
     transition: 0.8s;
-    background-color: rgba(74, 91, 175);
+    // background-color: rgba(74, 91, 175);
+    background:white;
   `;
 
   return (
     <>
+      <Navbar>
+        <img src="/images/GCNLogo.svg" alt="logo"/>
       <NavButtonContainer>
         <NavButton
           onClick={() => {
@@ -68,6 +72,7 @@ const MobileNav = () => {
           }}
         ></NavButton>
       </NavButtonContainer>
+      </Navbar>
       <AnimatePresence exitBeforeEnter={true}>
         {menu.show && (
           <Container
