@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-
+import { NavButtonType } from "./MobileNav";
 /////mobile nav styles
 export const Navbar = styled.div`
   width: 100%;
@@ -109,14 +109,54 @@ export const NavButtonContainer = styled.div`
   place-items: center;
   z-index: 2;
 `;
-
+export const NavButton = styled.div<NavButtonType>`
+  &:before {
+    position: absolute;
+    width: 30px;
+    top: 50%;
+    left: 50%;
+    height: 0.2rem;
+    // left: 0.75rem;
+    transition: 0.3s;
+    content: "";
+    background: black;
+    border-radius: 50px;
+    transition: 0.8s;
+    transform: ${(props) => props.before.transform};
+    width: ${(props) => props.before.width};
+  }
+  &:after {
+    width: 40px;
+    background: black;
+    height: 0.2rem;
+    content: "";
+    position: absolute;
+    width: 30px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50px;
+    transition: 0.8s;
+    transform: ${(props) => props.after.transform};
+    width: ${(props) => props.after.width};
+  }
+  width: 50px;
+  height: 50px;
+  background: black;
+  border-radius: 50%;
+  margin: auto;
+  position: relative;
+  transition: 0.8s;
+  // background-color: rgba(74, 91, 175);
+  background: white;
+  box-shadow: 2px 2px 10px 2px #9a0000;
+`;
 export const BtnStyles1 = {
-  after: "transform: translate(-70%,30%) ; width:20px;",
-  before: " transform: translate(-50%,-200%); width:30px;",
+  after: { transform: "translate(-70%,30%)", width: "20px" },
+  before: { transform: "translate(-50%,-200%)", width: "30px" },
 };
 export const BtnStyles2 = {
-  after: "transform: translate(-50%,-50%) rotate(-45deg);",
-  before: " transform: translate(-50%,-50%) rotate(45deg);",
+  after: { transform: "translate(-50%,-50%) rotate(-45deg)" },
+  before: { transform: "translate(-50%,-50%) rotate(45deg)" },
 };
 
 ///////////////////////////navBody styles////////////////////////

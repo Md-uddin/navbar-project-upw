@@ -1,6 +1,5 @@
 import { useState } from "react";
 // import { Link } from "react-router-dom";
-import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
 import NavBody from "./NavBody";
 import {
@@ -9,57 +8,31 @@ import {
   Container,
   MainLi,
   Navbar,
+  NavButton,
   NavButtonContainer,
   SocialContainer,
 } from "./styles";
 import { BackgroundVariant, liVariant } from "./animations";
 // import { Link } from "react-router-dom";
 
+
+
+///////types
+export type NavButtonType = {
+  after: { transform: string; width?: string };
+  before: { transform: string; width?: string };
+};
+type menuStateType = {
+  show: boolean;
+  BtnStyles: NavButtonType;
+};
 const MobileNav = () => {
-  const [menu, setmenu] = useState({
+  const [menu, setmenu] = useState<menuStateType>({
     show: false,
     BtnStyles: BtnStyles1,
   });
 
-  const NavButton = styled.div`
-    &:before {
-      position: absolute;
-      width: 30px;
-      top: 50%;
-      left: 50%;
-      height: 0.2rem;
-      // left: 0.75rem;
-      transition: 0.3s;
-      content: "";
-      background: black;
-      border-radius: 50px;
-      transition: 5s;
-      ${menu.BtnStyles.before}
-    }
-    &:after {
-      width: 40px;
-      background: black;
-      height: 0.2rem;
-      content: "";
-      position: absolute;
-      width: 30px;
-      top: 50%;
-      left: 50%;
-      border-radius: 50px;
-      transition: 5s;
-      ${menu.BtnStyles.after}
-    }
-    width: 50px;
-    height: 50px;
-    background: black;
-    border-radius: 50%;
-    margin: auto;
-    position: relative;
-    transition: 0.8s;
-    // background-color: rgba(74, 91, 175);
-    background: white;
-    box-shadow: 2px 2px 10px 2px #9a0000;
-  `;
+
   return (
     <>
       <Navbar>
@@ -75,7 +48,9 @@ const MobileNav = () => {
                 BtnStyles: menu.show === true ? BtnStyles1 : BtnStyles2,
               });
             }}
-          ></NavButton>
+            after={menu.BtnStyles.after}
+            before={menu.BtnStyles.before}
+          />
         </NavButtonContainer>
       </Navbar>
       <SocialContainer>
